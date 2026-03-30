@@ -1,0 +1,141 @@
+{
+  "skill_name": "ai-friendly-prd",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "我们电商 App 想加一个"商品收藏"功能，用户可以收藏商品、查看收藏夹列表、删除收藏。支持未登录状态下点击收藏，登录后自动合并到账号。收藏列表需要支持按收藏时间排序，每个用户最多收藏 500 件商品。帮我写 PRD。",
+      "expected_output": "Complete AI-Friendly PRD saved to docs/ directory, containing: at least 1 Mermaid diagram, a decision table for business rules, at least 3 BDD Gherkin scenarios, all 6 UI states for key pages, semantic business entity mappings with 【实体】【属性】 format, and agent context annotations (💡).",
+      "files": [],
+      "assertions": [
+        {
+          "name": "has_mermaid_diagram",
+          "description": "PRD contains at least one Mermaid code block (```mermaid)"
+        },
+        {
+          "name": "has_decision_table",
+          "description": "PRD contains a Markdown decision table with ≥3 columns covering conditional business rules"
+        },
+        {
+          "name": "has_bdd_scenarios",
+          "description": "PRD contains at least 3 BDD scenarios using Given/When/Then or 假设/当/那么 pattern"
+        },
+        {
+          "name": "has_six_ui_states",
+          "description": "PRD mentions all 6 UI states: Default/初始态, Loading/加载态, Empty/空态, Error/异常态, Success/成功态, Limit/边界态"
+        },
+        {
+          "name": "has_entity_binding",
+          "description": "PRD uses semantic binding format: contains 【实体： and 【属性："
+        },
+        {
+          "name": "has_agent_annotation",
+          "description": "PRD contains 💡 agent context annotations"
+        },
+        {
+          "name": "saved_to_docs",
+          "description": "PRD file is saved under a docs/ directory"
+        },
+        {
+          "name": "no_placeholders",
+          "description": "PRD does not contain unfilled placeholders like [TODO], [TBD], [placeholder], or [...]"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "需要设计一个用户积分系统 PRD：用户完成购买（按金额比例获得积分）、每日签到（固定积分）、提交商品评价（固定积分）可以获得积分。积分可以在结算时抵扣现金（100积分=1元），单笔订单最多用积分抵扣 30%。积分有效期 1 年，过期自动清零。积分可以在个人中心查看明细和余额。",
+      "expected_output": "Complete AI-Friendly PRD saved to docs/ directory, containing: Mermaid state diagram for points lifecycle, decision table covering all point-earning rules and redemption conditions, BDD scenarios including happy path + error + edge case, all 6 UI states for the points detail page, business entity definitions for 积分账户 and 积分流水, and agent context annotations.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "has_mermaid_diagram",
+          "description": "PRD contains at least one Mermaid code block (```mermaid)"
+        },
+        {
+          "name": "has_decision_table",
+          "description": "PRD contains a Markdown decision table with ≥3 columns covering conditional business rules"
+        },
+        {
+          "name": "has_bdd_scenarios",
+          "description": "PRD contains at least 3 BDD scenarios using Given/When/Then or 假设/当/那么 pattern"
+        },
+        {
+          "name": "has_six_ui_states",
+          "description": "PRD mentions all 6 UI states: Default/初始态, Loading/加载态, Empty/空态, Error/异常态, Success/成功态, Limit/边界态"
+        },
+        {
+          "name": "has_entity_binding",
+          "description": "PRD uses semantic binding format: contains 【实体： and 【属性："
+        },
+        {
+          "name": "has_agent_annotation",
+          "description": "PRD contains 💡 agent context annotations"
+        },
+        {
+          "name": "saved_to_docs",
+          "description": "PRD file is saved under a docs/ directory"
+        },
+        {
+          "name": "no_placeholders",
+          "description": "PRD does not contain unfilled placeholders like [TODO], [TBD], [placeholder], or [...]"
+        },
+        {
+          "name": "has_points_state_machine",
+          "description": "PRD contains a Mermaid stateDiagram or explicit state transitions for the points lifecycle (issued → active → expired)"
+        },
+        {
+          "name": "decision_table_covers_earn_rules",
+          "description": "Decision table covers all 3 earning triggers: purchase/购买, check-in/签到, and review/评价"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I need a PRD for a team file upload feature. Users can upload files up to 100MB each, with a total storage limit of 10GB per team. Files are automatically scanned for viruses before being made available to download. Admins can view and delete all team files. Regular users can only see and delete their own uploads. Files should be downloadable with a shareable link that expires after 7 days.",
+      "expected_output": "Complete AI-Friendly PRD saved to docs/ directory (English or bilingual), containing: Mermaid flowchart for upload + virus scan workflow, RBAC permission table distinguishing Admin vs User roles, decision table for storage quota and file visibility rules, BDD scenarios covering upload success + virus detected + quota exceeded, all 6 UI states for the file list page, and non-functional constraints section covering virus scan SLA and security requirements.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "has_mermaid_diagram",
+          "description": "PRD contains at least one Mermaid code block (```mermaid)"
+        },
+        {
+          "name": "has_decision_table",
+          "description": "PRD contains a Markdown decision table with ≥3 columns covering conditional business rules"
+        },
+        {
+          "name": "has_bdd_scenarios",
+          "description": "PRD contains at least 3 BDD scenarios using Given/When/Then pattern"
+        },
+        {
+          "name": "has_six_ui_states",
+          "description": "PRD mentions all 6 UI states: Default, Loading, Empty, Error, Success, Limit (or equivalent)"
+        },
+        {
+          "name": "has_entity_binding",
+          "description": "PRD uses semantic binding format: contains business entity + attribute references (【实体：/【属性：or Entity/Attribute format)"
+        },
+        {
+          "name": "has_agent_annotation",
+          "description": "PRD contains 💡 agent context annotations"
+        },
+        {
+          "name": "saved_to_docs",
+          "description": "PRD file is saved under a docs/ directory"
+        },
+        {
+          "name": "no_placeholders",
+          "description": "PRD does not contain unfilled placeholders like [TODO], [TBD], [placeholder], or [...]"
+        },
+        {
+          "name": "has_rbac_table",
+          "description": "PRD contains a roles/permissions table distinguishing Admin and regular User capabilities"
+        },
+        {
+          "name": "has_virus_scan_flow",
+          "description": "The Mermaid diagram includes a virus scan step or conditional branch"
+        }
+      ]
+    }
+  ]
+}
