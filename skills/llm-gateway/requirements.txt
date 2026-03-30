@@ -1,0 +1,8 @@
+requests==2.31.0
+python-dotenv==1.0.1
+PyJWT==2.8.0
+python-dateutil
+
+# IDaaS 认证（需要私有源）
+--extra-index-url https://gitlabee.chehejia.com/api/v4/projects/10037/packages/pypi/simple
+idaas-sdk==0.8.0
