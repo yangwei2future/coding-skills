@@ -1,0 +1,7 @@
+{
+  "name": "feishu-requirement",
+  "description": "从飞书文档提取需求内容并保存为本地 Markdown 文件到 docs 目录",
+  "author": {
+    "name": "yangwei2future"
+  }
+}

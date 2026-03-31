@@ -1,0 +1,7 @@
+{
+  "name": "dip-openapi-token",
+  "description": "DIP OpenAPI IDaaS Token 获取工具，通过浏览器登录自动获取 Access Token，支持 test/ontest/prod 三套环境",
+  "author": {
+    "name": "yangwei2future"
+  }
+}

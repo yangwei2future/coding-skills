@@ -1,0 +1,57 @@
+{
+  "name": "coding-skills",
+  "owner": {
+    "name": "yangwei2future"
+  },
+  "plugins": [
+    {
+      "name": "ai-friendly-prd",
+      "description": "生成 AI 友好的结构化产品需求文档 (PRD)，下游 Agent 可直接解析生成系统设计、API 规范和测试用例",
+      "category": "productivity",
+      "source": "./plugins/ai-friendly-prd",
+      "homepage": "https://github.com/yangwei2future/coding-skills/tree/main/plugins/ai-friendly-prd"
+    },
+    {
+      "name": "code-to-tech-manual",
+      "description": "将项目实现代码转化为结构化技术手册，以方法级粒度记录业务流程的完整调用链、关键判断点和外部依赖",
+      "category": "development",
+      "source": "./plugins/code-to-tech-manual",
+      "homepage": "https://github.com/yangwei2future/coding-skills/tree/main/plugins/code-to-tech-manual"
+    },
+    {
+      "name": "dev-pipeline",
+      "description": "端到端开发流水线编排器，将需求澄清、架构设计、任务拆解、并行编码、QA 验证串联为自动化工作流",
+      "category": "development",
+      "source": "./plugins/dev-pipeline",
+      "homepage": "https://github.com/yangwei2future/coding-skills/tree/main/plugins/dev-pipeline"
+    },
+    {
+      "name": "dip-openapi-token",
+      "description": "DIP OpenAPI IDaaS Token 获取工具，通过浏览器登录自动获取 Access Token，支持 test/ontest/prod 三套环境",
+      "category": "productivity",
+      "source": "./plugins/dip-openapi-token",
+      "homepage": "https://github.com/yangwei2future/coding-skills/tree/main/plugins/dip-openapi-token"
+    },
+    {
+      "name": "feishu-requirement",
+      "description": "从飞书文档提取需求内容并保存为本地 Markdown 文件到 docs 目录",
+      "category": "productivity",
+      "source": "./plugins/feishu-requirement",
+      "homepage": "https://github.com/yangwei2future/coding-skills/tree/main/plugins/feishu-requirement"
+    },
+    {
+      "name": "llm-gateway",
+      "description": "帮助接入公司内部 LLM Gateway (AgentOps/融合云模型)，完成模型接入、订阅管理、API Key 获取等操作",
+      "category": "development",
+      "source": "./plugins/llm-gateway",
+      "homepage": "https://github.com/yangwei2future/coding-skills/tree/main/plugins/llm-gateway"
+    },
+    {
+      "name": "test-case",
+      "description": "基于需求文档或技术方案生成全面的功能测试用例，支持为整个方案或指定模块生成",
+      "category": "development",
+      "source": "./plugins/test-case",
+      "homepage": "https://github.com/yangwei2future/coding-skills/tree/main/plugins/test-case"
+    }
+  ]
+}

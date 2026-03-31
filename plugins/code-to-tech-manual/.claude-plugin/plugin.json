@@ -1,0 +1,7 @@
+{
+  "name": "code-to-tech-manual",
+  "description": "将项目实现代码转化为结构化技术手册，以方法级粒度记录业务流程的完整调用链、关键判断点和外部依赖",
+  "author": {
+    "name": "yangwei2future"
+  }
+}

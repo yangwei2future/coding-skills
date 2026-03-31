@@ -1,0 +1,7 @@
+{
+  "name": "dev-pipeline",
+  "description": "端到端开发流水线编排器，将需求澄清、架构设计、任务拆解、并行编码、QA 验证串联为自动化工作流",
+  "author": {
+    "name": "yangwei2future"
+  }
+}

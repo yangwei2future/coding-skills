@@ -1,0 +1,7 @@
+{
+  "name": "test-case",
+  "description": "基于需求文档或技术方案生成全面的功能测试用例，支持为整个方案或指定模块生成",
+  "author": {
+    "name": "yangwei2future"
+  }
+}

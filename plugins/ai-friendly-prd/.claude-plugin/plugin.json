@@ -1,0 +1,7 @@
+{
+  "name": "ai-friendly-prd",
+  "description": "生成 AI 友好的结构化产品需求文档 (PRD)，下游 Agent 可直接解析生成系统设计、API 规范和测试用例",
+  "author": {
+    "name": "yangwei2future"
+  }
+}

@@ -1,18 +1,24 @@
 # coding-skills
 
-一套为 Claude Code 设计的自定义 Skill 集合，覆盖需求管理、开发流水线、测试用例、技术文档等研发全生命周期场景。
+研发全生命周期 Skill 集合，覆盖需求管理、开发流水线、测试用例、技术文档等场景。
 
-## 安装
+基于 Claude Code Plugin Marketplace 机制，支持一键安装。
 
-使用 `npx` 将某个 skill 安装到 Claude Code：
+## 安装 Marketplace
+
+先将本仓库添加为 Claude Code 的 marketplace 来源：
 
 ```bash
-# 安装单个 skill
-npx @anthropic-ai/claude-code install-skill <skill-name>
+claude plugin marketplace add yangwei2future/coding-skills
+```
 
-# 或者直接 clone 本仓库，手动复制 skill 到 ~/.claude/skills/
-git clone <repo-url>
-cp -r skills/<skill-name> ~/.claude/skills/
+然后即可按需安装各个 skill：
+
+```bash
+claude plugin install <skill-name>
+
+# 查看所有可用 skill
+claude plugin list
 ```
 
 ---
@@ -26,31 +32,28 @@ cp -r skills/<skill-name> ~/.claude/skills/
 **触发场景**：写 PRD、产品需求、需求文档、功能设计、feature spec
 
 ```bash
-npx @anthropic-ai/claude-code skills install ai-friendly-prd
+claude plugin install ai-friendly-prd
 ```
 
 ---
 
 ### code-to-tech-manual — 代码转技术手册
 
-将项目实现代码转化为结构化技术手册，以方法级粒度记录业务流程的完整调用链、关键判断点和外部依赖，沉淀为可检索的知识库。
+将项目实现代码转化为结构化技术手册，以方法级粒度记录业务流程的完整调用链、关键判断点和外部依赖。
 
-支持前端（React/Vue）和后端（Java/Spring Boot）两种模式：
-- `/code-to-tech-manual init` — 全量扫描，首次建立技术手册
-- `/code-to-tech-manual add` — 新功能完成后追加文档
-- `/code-to-tech-manual update` — 需求变更后修正已有章节
+支持前端（React/Vue）和后端（Java/Spring Boot）两种模式，以及 `init` / `add` / `update` 三个子命令。
 
 **触发场景**：生成技术手册、记录代码实现、沉淀代码逻辑
 
 ```bash
-npx @anthropic-ai/claude-code skills install code-to-tech-manual
+claude plugin install code-to-tech-manual
 ```
 
 ---
 
 ### dev-pipeline — 端到端开发流水线
 
-将需求澄清、架构设计、任务拆解、并行编码、QA 验证串联为自动化工作流，适用于任何技术栈的项目开发。
+将需求澄清、架构设计、任务拆解、并行编码、QA 验证串联为自动化工作流，适用于任何技术栈。
 
 ```
 需求文档 → [PM] → [架构师] → [人工审核] → [并行编码] → [QA验证] → 交付
@@ -59,7 +62,7 @@ npx @anthropic-ai/claude-code skills install code-to-tech-manual
 **触发场景**：dev pipeline、全流程开发、需求到代码、帮我开发这个功能
 
 ```bash
-npx @anthropic-ai/claude-code skills install dev-pipeline
+claude plugin install dev-pipeline
 ```
 
 ---
@@ -71,7 +74,7 @@ npx @anthropic-ai/claude-code skills install dev-pipeline
 **触发场景**：获取 token、IDaaS 登录、DIP OpenAPI 认证、刷新 token
 
 ```bash
-npx @anthropic-ai/claude-code skills install dip-openapi-token
+claude plugin install dip-openapi-token
 ```
 
 ---
@@ -80,17 +83,12 @@ npx @anthropic-ai/claude-code skills install dip-openapi-token
 
 从飞书文档（docx/wiki）提取需求内容并保存为本地 Markdown 文件到 `docs` 目录。
 
-**前提条件**：需设置环境变量 `FEISHU_TOKEN`（飞书 API 认证 token）
+**前提条件**：需设置环境变量 `FEISHU_TOKEN`
 
 **触发场景**：从飞书导入需求文档
 
 ```bash
-npx @anthropic-ai/claude-code skills install feishu-requirement
-```
-
-**使用示例**：
-```bash
-/feishu-requirement https://li.feishu.cn/docx/abc123
+claude plugin install feishu-requirement
 ```
 
 ---
@@ -102,7 +100,7 @@ npx @anthropic-ai/claude-code skills install feishu-requirement
 **触发场景**：接入公司模型、使用内部模型、融合云模型、切换模型
 
 ```bash
-npx @anthropic-ai/claude-code skills install llm-gateway
+claude plugin install llm-gateway
 ```
 
 ---
@@ -114,40 +112,26 @@ npx @anthropic-ai/claude-code skills install llm-gateway
 **触发场景**：编写测试用例、生成测试用例
 
 ```bash
-npx @anthropic-ai/claude-code skills install test-case
-```
-
-**使用示例**：
-```bash
-/test-case 需求文档       # 为整个需求文档生成测试用例
-/test-case 需求文档 登录模块  # 只为登录模块生成
-/test-case               # 列出所有可用文档供选择
+claude plugin install test-case
 ```
 
 ---
-
-## 手动安装
-
-如果不使用 npx，可以手动将 skill 目录复制到 Claude Code 的 skills 目录：
-
-```bash
-# 复制单个 skill
-cp -r skills/test-case ~/.claude/skills/
-
-# 复制所有 skills
-cp -r skills/* ~/.claude/skills/
-```
 
 ## 目录结构
 
 ```
 coding-skills/
-└── skills/
-    ├── ai-friendly-prd/       # PRD 生成器
-    ├── code-to-tech-manual/   # 代码转技术手册
-    ├── dev-pipeline/          # 开发流水线
-    ├── dip-openapi-token/     # DIP Token 获取
-    ├── feishu-requirement/    # 飞书需求提取
-    ├── llm-gateway/           # LLM Gateway 接入
-    └── test-case/             # 测试用例生成
+├── .claude-plugin/
+│   └── marketplace.json     # Marketplace 入口 manifest
+├── plugins/                 # 各 plugin 目录
+│   ├── ai-friendly-prd/
+│   │   ├── .claude-plugin/plugin.json
+│   │   └── skills/ai-friendly-prd/
+│   ├── code-to-tech-manual/
+│   ├── dev-pipeline/
+│   ├── dip-openapi-token/
+│   ├── feishu-requirement/
+│   ├── llm-gateway/
+│   └── test-case/
+└── skills/                  # 原始 skill 源文件
 ```

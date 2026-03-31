@@ -1,0 +1,7 @@
+{
+  "name": "llm-gateway",
+  "description": "帮助接入公司内部 LLM Gateway (AgentOps/融合云模型)，完成模型接入、订阅管理、API Key 获取等操作",
+  "author": {
+    "name": "yangwei2future"
+  }
+}
