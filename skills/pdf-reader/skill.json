@@ -1,0 +1,7 @@
+{
+  "name": "pdf-reader",
+  "description": "使用PyMuPDF进行PDF读取、编辑、生成全流程操作。支持文本提取、页面编辑、合并拆分、水印添加、注释标注、PDF创建等功能，完美支持中文",
+  "version": "3.0.0",
+  "userInvocable": true,
+  "commandPrefix": "/pdf"
+}
